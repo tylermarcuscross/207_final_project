@@ -21,7 +21,3 @@ python data_setup.py
 
 - ^^ if this doesn't work, try "python3" instead of "python"
 
-```
-./download_setup_data.sh
-```
-
