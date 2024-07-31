@@ -8,3 +8,11 @@ LABELS_PATH_CROPPED = os.path.join('data', 'data_cropped.csv')
 
 LABEL_ENCODE_DICT = {'Happy': 0, 'Sad': 1, 'Angry': 2, 'Surprise': 3, 'Neutral': 4}
 LABEL_DECODE_DICT = {v: k for k, v in LABEL_ENCODE_DICT.items()}
+
+# ----------------------------------------
+# 4:3 ratio
+IMAGE_SIZE = (160, 120)
+
+# 3:2 ratio
+# IMAGE_SIZE = (180, 120)
+# ----------------------------------------
