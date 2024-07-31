@@ -2,3 +2,8 @@
 /final_project/dataset
 /final_project/data.csv
 
+data/
+venv/
+.vscode/
+__pycache__/
+*.pyc
