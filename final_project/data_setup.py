@@ -33,6 +33,8 @@ def remove_emotion_folder(dataset_folder_path, emotion, labels_csv_file):
     return None
 
 
+
+
 def flatten_data_folder(dataset_folder_path):
     """
     Flattens the directory structure of a dataset folder by moving all image files to a single root folder.
@@ -73,9 +75,7 @@ def flatten_data_folder(dataset_folder_path):
             print(f"Moved images from '{emotion_folder}' folder into {flattened_folder_path}.")
     return None
 
-def get_image_dim(image_path):
-    with Image.open(image_path) as img:
-        return img.size # returns (width, height)
+
 
 
 def add_pixel_dimensions(df):
@@ -109,11 +109,6 @@ def add_pixel_dimensions(df):
 
 
 
-def encode_label(df, encoder_dict):
-    """ Returns df where label column is encoded. """
-    df['label_encoded'] = df['label'].map(encoder_dict)
-    return df
-
 
 def clean_up_labels_file(file_path: str, label_dict):
     """ Loads the labels csv file, removes the 'Unnamed: 0' column if it exists, 
@@ -128,7 +123,7 @@ def clean_up_labels_file(file_path: str, label_dict):
         df = df.drop(columns=['Unnamed: 0'])
 
     df = add_pixel_dimensions(df)
-    df = encode_label(df, label_dict)
+    df['label_encoded'] = df['label'].map(label_dict)
     df.to_csv(file_path, index=False)
     return None
 

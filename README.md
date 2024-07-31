@@ -15,11 +15,11 @@ pip install -r requirements.txt
 ```
 cd final_project
 ```
+```
+python data_setup.py
+```
 
-```
-chmod +x download_setup_data.sh
-```
-- ^^ this turns the .sh file into an executable 
+- ^^ if this doesn't work, try "python3" instead of "python"
 
 ```
 ./download_setup_data.sh
